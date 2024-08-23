@@ -1,0 +1,9 @@
+{% extends "./app_layout.html" %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+
+    {% block body%}
+        {% block content %}
+            {{render_form()}}
+        {% endblock  %}
+    {% endblock %}

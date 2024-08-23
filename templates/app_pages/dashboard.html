@@ -1,0 +1,21 @@
+{%extends'./app_layout.html'%}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{%block body%}
+
+<body>
+    {%block content%}
+    <strong> {{current_user.full_name}} This is the dashboard page</strong>
+    {%endblock%}
+</body>
+{%endblock%}
+</html>

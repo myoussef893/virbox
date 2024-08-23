@@ -1,0 +1,29 @@
+
+{% extends './app_layout.html' %}
+{% from "bootstrap4/form.html" import render_form %}
+{% block body %}
+    
+        <style>
+            body{
+                background-color: rgb(165, 165, 165);
+            }
+            .container{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            .add-item-form{
+                margin-top:200px;
+                justify-content: center;
+                align-items: center;
+                border: 1px black;
+                border-style: dotted;
+                border-radius: 50 px;
+                margin:20px;
+            }
+
+        </style>
+    <div class ="container">
+        <form class="add-item-form" method = 'post'>
+        {{render_form(form)}}
+        </form>
+    </div>
+{% endblock %}

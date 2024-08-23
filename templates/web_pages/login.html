@@ -1,0 +1,25 @@
+{% extends "./base.html" %}
+{% from "bootstrap4/form.html" import render_form%}
+
+{% block body %}
+
+<style>
+  .flex-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+  }
+</style>
+
+<div class = 'flex-container'>
+
+  <form method = 'post'>
+
+    {{render_form(form)}}
+
+  </form>
+
+<div>
+
+{% endblock  %}

@@ -1,0 +1,64 @@
+{% extends './app_layout.html' %}
+
+{% block body%}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        
+        margin: 0 auto; /* Center the table */
+        margin-top:10%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        background-color: #0023bd;
+        color: white;
+    }
+</style>  
+
+<table>
+    <thead>
+        <tr>
+            <th>Item ID</th>
+            <th>Scanning Date</th>
+            <th>Locker</th>
+            <th>Tracking Number</th>
+            <th>Weight</th>
+            <th>Clearance</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.scanning_date }}</td>
+                <td>{{ item.locker }}</td>
+                <td>{{ item.tracking_number }}</td>
+                <td>{{ item.weight }}</td>
+                <td>{{ item.clearance }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.status }}</td>
+                <td><a class="btn btn-danger" href="{{url_for('delete_item',item_id=item.id)}}">X</a>
+                    <a class="btn btn-warning" href="{{url_for('update_item',item_id=item.id)}}">U</a></td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
