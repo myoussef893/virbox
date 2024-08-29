@@ -1,5 +1,4 @@
 /.virt
-/alembic
 /venv
 database.db 
 alembic.ini
