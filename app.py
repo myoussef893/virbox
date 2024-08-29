@@ -1,14 +1,16 @@
 from flask import Flask, render_template,redirect,url_for,flash,session,request
 from werkzeug.security import generate_password_hash,check_password_hash
-from flask_bootstrap import Bootstrap4 
+from flask_bootstrap import Bootstrap5
 from models import User,db_session,Items
 from forms import LoginForm,RegisterationForm
 from flask_login import LoginManager,login_required,logout_user,login_user,current_user
 from random import randint
 from datetime import datetime as date
+
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
-bootstrap = Bootstrap4(app)
+bootstrap = Bootstrap5(app)
 
 login_manager =LoginManager()
 login_manager.init_app(app)

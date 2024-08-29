@@ -1,6 +1,37 @@
-{% extends "./app-layout.html" %}
-{% block body %}
 
-<h1> Hello {{current_user.name}}</h1>
+<style>
 
-{% endblock  %}
+    .container{
+        width: auto;
+        margin-top: 10%;
+    }
+    .img-fluid.rounded-start{
+        margin-top:25%
+    }
+</style>
+
+
+<main class="container">
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1280px-Flag_of_the_United_Arab_Emirates.svg.png" class="img-fluid rounded-start" alt="uae-flag">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">United Arab Emirates</h5>
+                  <p class="card-text"><strong> Address 1:</strong> Nasser Lootah airport building, plot No. 21-0, Near Dubai airport cargo village Warehouse:WAR002</p>
+                <p class="card-text"><strong> Address 2 (Locker):</strong> {{current_user.locker}}</p>
+                <p class="card-text"><strong> City:</strong> Dubai</p>
+                <p class="card-text"><strong> Phone:</strong> +971-50-602-7256</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </main>
+

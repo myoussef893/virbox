@@ -1,8 +1,104 @@
-{% extends "./app_layout.html" %}
-{%block body%}
-    {%block content%}
-        {%for item in cart:%}
-          <li>  {{item.title}} </li>
+{% extends './app_layout.html' %}
+
+{% block body%}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        
+        margin: 0 auto; /* Center the table */
+        margin-top:10%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        background-color: #0023bd;
+        color: white;
+    }
+    .btn.btn-warning{
+      height: 100%;
+      width:100%;
+      margin-right:50px;
+    }
+
+    .btn.btn-success{
+      height: 100%;
+      width:100%;
+      margin-left:50px;
+    }
+</style>  
+
+
+<div>
+  <h1>
+    CART
+  </h1>
+</div>
+<div>
+<table>
+    <tbody>
+        <thead>
+          <tr>
+            <th>
+              <strong>Title</strong>
+            </th>
+            <th>
+              <strong>Description</strong>
+            <th>
+              <strong>Price</strong>
+            </th>
+            <th>
+              <strong >Remove</strong>
+            </th>
+          </tr>
+        </thead>
+        {% for item in cart %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }}</td>
+                <td><a class="btn btn-danger" href="{{url_for('remove_from_cart',item_id=item.id)}}">X</a>
+                </td>
+            </tr>
         {% endfor %}
-    {% endblock %}
+    </tbody>
+</table>
+<br>
+
+<row>
+  <h2>Items in Cart: {{count}} item(s)</h2>
+  <h2>Total Price: {{price}}</h2>
+
+</row>
+
+</div>
+
+
+<div class="container text-center">
+  <div class="row">
+
+    <div class="col">
+      <a class="btn btn-warning" href="{{url_for('view_all_items')}}"><strong> Back to Inventory</strong></a>
+    </div>
+
+    <div class="col">
+      <a class="btn btn-success" href="{{url_for('checkout')}}">Checkout</a>
+    </div>
+
+
+
+  </div>
+</div>
+
+
 {% endblock %}

@@ -1,0 +1,43 @@
+    {% extends './app_layout.html'%}
+    {% block body %}
+
+        <div>
+                
+            <input class ="tracking" name="tn" >
+            <input class ="shipping" name="shipping-company">
+            <input class ="box-value" name="value">
+
+        </div>
+
+        <div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Locker</th>
+                        <th>Tracking Number</th>
+                        <th>Weight</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        {% for item in items %}
+                            
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td>{{ item.locker }}</td>
+                                <td>{{ item.tracking_number }}</td>
+                                <td>{{ item.item_weight }}</td>
+                                <td>{{ item.status }}</td>
+                            </tr>
+                        {% endfor %}            
+                </tbody>
+            </table>
+            
+        </div>
+
+
+    {%endblock% }

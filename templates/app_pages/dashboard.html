@@ -15,6 +15,11 @@
 <body>
     {%block content%}
     <strong> {{current_user.full_name}} This is the dashboard page</strong>
+
+    {% include './app_pages/home.html'%}
+
+
+
     {%endblock%}
 </body>
 {%endblock%}

@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,IntegerField,FloatField,PasswordField,EmailField,SubmitField,SelectField,MultipleFileField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired,length
 from models import User,db_session
 department_choices = ['Super User','Managers','Customer Care','Finances','Sorting','Logistics',]
-egypt_cities_choices = [
+egypt_cities_choices = ["",
     "Cairo", "Alexandria", "Giza", "Shubra El-Kheima", "Port Said", "Suez", "Luxor", 
     "al-Mansura", "El-Mahalla El-Kubra", "Tanta", "Asyut", "Ismailia", "Fayyum", 
     "Zagazig", "Aswan", "Damietta", "Damanhur", "al-Minya", "Beni Suef", "Qena", 
@@ -12,10 +12,20 @@ egypt_cities_choices = [
     "Marsa Matruh", "Idfu", "Mit Ghamr", "Al-Hamidiyya", "Desouk", "Qalyub", 
     "Abu Kabir", "Kafr el-Dawwar", "Girga", "Akhmim", "Matareya"
 ]
+payment_methods = ['','Bank Deposit/Transfer','Credit Card', 'Cash On Delivery']
 
 lockers = [i.locker for i in db_session.query(User)]
 
 ## Checkout
+class CheckoutForm(FlaskForm):
+    full_name = StringField("Full Name:",validators=[DataRequired()])
+    phone_number = StringField('Phone Number',validators=[DataRequired(),length(max=11,min=11)])
+    address = StringField('Address:',validators=[DataRequired()])
+    city= SelectField('City:',choices=egypt_cities_choices)
+    landmark = StringField('Land Mark:')
+    payment_method = SelectField('Payment Method:',choices=payment_methods,validators=[DataRequired()])
+    submit = SubmitField('Order Now')
+    
 
 
 
@@ -41,3 +51,8 @@ class PackageForm(FlaskForm):
     package_weight = FloatField('Package Weight:',validators=[DataRequired()])
     locker = SelectField('Locker of the User:',choices=lockers,validators=[DataRequired()])
     submit = SubmitField('Save')
+
+# Item Form Editor
+
+class ItemForm(FlaskForm): 
+    pass

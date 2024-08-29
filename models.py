@@ -55,5 +55,20 @@ class IntBox(Base):
     shipping_company = Column(String,nullable=False)
     box_value = Column(Float)
 
+class Orders(Base): 
+    __tablename__ = 'orders'
+    id = Column(Integer, primary_key=True)
+    order_date = Column(String,nullable=False)
+    items_count = Column(Integer,nullable=False)
+    order_weight = Column(Integer,nullable=False)
+    total_price = Column(Float,nullable=False)
+    locker =Column(String)
+    full_name= Column(String)
+    phone_number = Column(String)
+    city = Column(String)
+    status = Column(String)
+    address = Column(String)
+    payment_method=Column(String)
+
 Base.metadata.create_all(engine)
 

@@ -1,0 +1,79 @@
+{% extends './app_layout.html' %}
+{% from 'Bootstrap4/form.html' import render_form %}
+<head>
+
+
+</head>
+<style>
+    body {
+        background-color: rgb(165, 165, 165);
+    }
+
+    .checkout {
+        height: fit-content;
+    }
+
+    .container {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center; /* Center the columns */
+        margin-top: 50%;
+    }
+
+    .checkout-column {
+        width: 70%; /* Adjust column widths as needed */
+        margin: 0 20px; /* Add spacing between columns */
+    }
+
+    .cart-column {
+        width: 30%;
+        margin: 0 20px;
+    }
+
+    .separator {
+        height: 1000rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .btn-order {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    #section-title{
+        padding-bottom:20%;
+    }
+</style>
+
+{% block body %}
+<div class="separator">
+    <br>
+</div>
+
+<div class="container text-left">
+    <div class="row">
+        <strong class="container text-center" id="section-title"><h1>Checkout Section</h1></strong>
+
+        <div class="col-md-8 checkout-column">
+
+                {{ render_form(form) }}
+
+        </div>
+
+        <div class="col-6 col-md-4 cart-column">Cart Section</div>
+    </div>
+</div>
+{% endblock %}

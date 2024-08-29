@@ -11,13 +11,12 @@
       <span class="fs-4">Sidebar</span>
     </a>
     <hr>
+
+
+    <br>
+<h6>User Controls</h6>
+
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="home.html"></use></svg>
-          Home
-        </a>
-      </li>
       <li>
         <a href="{{url_for('dashboard')}}" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
@@ -25,23 +24,15 @@
         </a>
       </li>
       <li>
+        <a href="{{url_for('locker_items')}}" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          My Received items 
+        </a>
+      </li>
+      <li>
         <a href="#" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Orders
-        </a>
-      </li>
-
-      <li>
-        <a href="{{url_for('view_all_items')}}" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          View items 
-        </a>
-      </li>
-
-      <li>
-        <a href="{{url_for('add_item')}}" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Add Package New Package
+          My Orders
         </a>
       </li>
       <li>
@@ -50,8 +41,40 @@
           Cart
         </a>
       </li>
+
+
+<br>
+<h6>Admin Controls</h6>
+
+
+      <li>
+        <a href="{{url_for('add_item')}}" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          Add Package New Package
+        </a>
+      </li>
+
+
+      <li>
+        <a href="{{url_for('view_all_items')}}" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          View items 
+        </a>
+      </li>
+
+
+      <li>
+        <a href="{{url_for('cart')}}" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+          International Box
+        </a>
+      </li>
     </ul>
     <hr>
+
+
+
+
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
